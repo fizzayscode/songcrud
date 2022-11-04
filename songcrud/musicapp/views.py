@@ -28,7 +28,7 @@ def getSong(request,id):
                 "artist_last_name":song.artist.last_name,
                 }
     except Song.DoesNotExist:
-        raise Http404("Artist does not exist")
+        raise Http404("Artist does not exist at all")
     data.append(needs)
     return HttpResponse(data)
 
@@ -59,8 +59,6 @@ def getArtists(request):
                 }
         data.append(needs)
     return HttpResponse(data)
-
-
 
 
 # Create your views here.
